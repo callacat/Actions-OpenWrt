@@ -18,6 +18,9 @@ on:
         description: 'SSH connection to Actions'
         required: false
         default: 'false'
+  push:
+    paths:
+      - '.github/workflows/2100.yml'
 #  schedule:
 #    - cron: 0 8 1,10,20 * *
 #  watch:
