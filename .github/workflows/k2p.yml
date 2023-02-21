@@ -21,6 +21,7 @@ on:
   push:
     paths:
       - '.github/workflows/k2p.yml'
+      - 'k2p.config'
 #  schedule:
 #    - cron: 0 9 1,10,20 * *
 #  watch:
@@ -132,7 +133,7 @@ jobs:
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
         cd openwrt/bin/targets/*/*
-        rm -rf packages  feeds.buildinfo openwrt-ramips-mt7621-phicomm_k2p-initramfs-kernel.bin openwrt-ramips-mt7621-phicomm_k2p.manifest sha256sums version.buildinfo
+        rm -rf packages  feeds.buildinfo openwrt-ramips-mt7621-phicomm_k2p.manifest sha256sums version.buildinfo
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
 

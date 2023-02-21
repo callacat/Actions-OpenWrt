@@ -21,6 +21,7 @@ on:
   push:
     paths:
       - '.github/workflows/2100.yml'
+      - '2100.config'
 #  schedule:
 #    - cron: 0 8 1,10,20 * *
 #  watch:
