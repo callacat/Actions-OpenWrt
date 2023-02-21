@@ -130,7 +130,7 @@ jobs:
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
         cd openwrt/bin/targets/*/*
-        rm -rf packages feeds.buildinfo openwrt-ramips-mt7621-xiaomi_redmi-router-ac2100.manifest openwrt-ramips-mt7621-xiaomi_redmi-router-ac2100-initramfs-kernel.bin sha256sums version.buildinfo openwrt-ramips-mt7621-xiaomi_redmi-router-ac2100-squashfs-factory.bin openwrt-ramips-mt7621-xiaomi_redmi-router-ac2100-squashfs-kernel1.bin openwrt-ramips-mt7621-xiaomi_redmi-router-ac2100-squashfs-rootfs0.bin
+        rm -rf packages feeds.buildinfo openwrt-ramips-mt7621-xiaomi_redmi-router-ac2100.manifest sha256sums version.buildinfo openwrt-ramips-mt7621-xiaomi_redmi-router-ac2100-squashfs-factory.bin openwrt-ramips-mt7621-xiaomi_redmi-router-ac2100-squashfs-kernel1.bin openwrt-ramips-mt7621-xiaomi_redmi-router-ac2100-squashfs-rootfs0.bin
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
 
