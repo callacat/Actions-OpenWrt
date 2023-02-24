@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build OpenWrt-x86
+name: Build OpenWrt-4125
 
 on:
   repository_dispatch:
@@ -20,8 +20,8 @@ on:
         default: 'false'
   push:
     paths:
-      - '.github/workflows/x86.yml'
-      - 'x86.config'
+      - '.github/workflows/4125.yml'
+      - '4125.config'
 #  schedule:
 #    - cron: 0 8 1,10,20 * *
 #  watch:
