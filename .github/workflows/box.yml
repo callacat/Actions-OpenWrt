@@ -18,10 +18,14 @@ on:
         description: 'SSH connection to Actions'
         required: false
         default: 'false'
+  push:
+    paths:
+      - '.github/workflows/box.yml'
+      - 'box.config'
 #  schedule:
 #    - cron: 0 8 1,10,20 * *
-  watch:
-    types: [started]
+  # watch:
+  #   types: [started]
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -29,7 +33,7 @@ env:
   FEEDS_CONF: feeds.conf.all
   CONFIG_FILE: box.config
   DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2-100.sh
+  DIY_P2_SH: diy-part2-box.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: true
