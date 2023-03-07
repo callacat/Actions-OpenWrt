@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: delete-release-action
-        uses: sgpublic/delete-release-action@main
+        uses: sgpublic/delete-release-action@master
         with:
           release-drop: true
           release-keep-count: 7
