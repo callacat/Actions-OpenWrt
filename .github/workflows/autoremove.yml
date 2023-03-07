@@ -16,3 +16,14 @@ jobs:
           repository: ${{ github.repository }}
           retain_days: 7
           keep_minimum_runs: 5
+
+  del_Release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: delete-release-action
+        uses: sgpublic/delete-release-action@main
+        with:
+          release-drop: true
+          release-keep-count: 7
+        env:
+          GITHUB_TOKEN: ${{ github.TOKEN }}
