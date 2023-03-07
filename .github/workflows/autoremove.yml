@@ -21,9 +21,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: delete-release-action
-        uses: sgpublic/delete-release-action@master
+        uses: sgpublic/delete-release-action@v1.0
         with:
           release-drop: true
           release-keep-count: 7
+          release-drop-tag: true
+          pre-release-drop: true
+          pre-release-keep-count: -1
+          pre-release-drop-tag: true
+          draft-drop: true
         env:
           GITHUB_TOKEN: ${{ github.TOKEN }}
