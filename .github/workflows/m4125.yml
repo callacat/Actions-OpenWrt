@@ -24,7 +24,7 @@ on:
       - 'm4125.config'
 #  schedule:
 #    - cron: 0 8 1,10,20 * *
- watch:
+  watch:
    types: [started]
 
 env:
