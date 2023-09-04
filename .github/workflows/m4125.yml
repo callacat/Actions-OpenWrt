@@ -112,6 +112,7 @@ jobs:
         cd openwrt
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j2 || make -j2 V=s
+        make package/index && find bin/packages -size -1024c -exec rm -f {} \;
         cp -r openwrt/bin/packages openwrt/
         tar -czf packages.tar.gz openwrt/packages
         echo "::set-output name=status::success"
