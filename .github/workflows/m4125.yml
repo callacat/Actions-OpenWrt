@@ -112,6 +112,8 @@ jobs:
         cd openwrt
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j2 || make -j2 V=s
+        cp -r openwrt/bin/packages openwrt/
+        tar -czf packages.tar.gz openwrt/packages
         echo "::set-output name=status::success"
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
         [ -s DEVICE_NAME ] && echo "DEVICE_NAME=_$(cat DEVICE_NAME)" >> $GITHUB_ENV
@@ -139,7 +141,6 @@ jobs:
       # docker import openwrt*.tar.gz ${{ secrets.DOCKER_USERNAME }}/openwrt:amd64
       # docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       # docker push ${{ secrets.DOCKER_USERNAME }}/openwrt:amd64
-
 
     - name: Upload firmware directory
       uses: actions/upload-artifact@main
@@ -184,7 +185,9 @@ jobs:
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
-        files: ${{ env.FIRMWARE }}/*
+        files: |
+          ${{ env.FIRMWARE }}/*
+          packages.tar.gz
 
     - name: Delete workflow runs
       uses: GitRML/delete-workflow-runs@main
