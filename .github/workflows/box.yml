@@ -129,7 +129,8 @@ jobs:
         path: openwrt/bin
 
     - name: 打包固件
-      env: "Dswang"
+      env: 
+        WHOAMI: "Dswang"
       run: |
         cd openwrt
         sudo git clone https://github.com/unifreq/openwrt_packit /opt/kernel
@@ -151,7 +152,6 @@ jobs:
       # docker import openwrt*.tar.gz ${{ secrets.DOCKER_USERNAME }}/openwrt:arm64
       # docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       # docker push ${{ secrets.DOCKER_USERNAME }}/openwrt:arm64
-        
 
     - name: Upload firmware directory
       uses: actions/upload-artifact@main
