@@ -17,3 +17,4 @@ sed -i "s/OpenWrt /Dswang build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" packa
 sed -i '/uci commit system/i\uci set system.@system[0].hostname='J4125'' package/lean/default-settings/files/zzz-default-settings
 # 修改手机版底部快捷链接小飞机指向
 # sed -i 's/cgi-bin/luci/admin/services/shadowsocksr/cgi-bin/luci/admin/services/openclash/g' package/luci-theme-neobird/luasrc/view/themes/neobird/header.htm
+git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
