@@ -22,10 +22,10 @@ on:
     paths:
       - '.github/workflows/m4125.yml'
       - 'm4125.config'
-  schedule:
-    - cron: 0 1 * * 0
-  watch:
-   types: [started]
+  # schedule:
+  #   - cron: 0 1 * * 0
+  # watch:
+  #  types: [started]
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
