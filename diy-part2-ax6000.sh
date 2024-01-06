@@ -16,4 +16,4 @@ sed -i "s/OpenWrt /Dswang build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" packa
 # 修改主机名字，把OpenWrt-123修改你喜欢的就行（不能纯数字或者使用中文）
 sed -i '/uci commit system/i\uci set system.@system[0].hostname='AX6000'' package/lean/default-settings/files/zzz-default-settings
 # TTYD 自动登录
-sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.con
+#sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.con
