@@ -1,11 +1,11 @@
 name: remove
 
-on:
-  push:
-    branches:
-      - main
-  schedule:
-    - cron: 0 8 * * 0
+# on:
+#   push:
+#     branches:
+#       - main
+  # schedule:
+  #   - cron: 0 8 * * 0
 
 jobs:
   del_runs:
